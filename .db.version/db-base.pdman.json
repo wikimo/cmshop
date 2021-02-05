@@ -1,0 +1,321 @@
+{
+  "modules": [
+    {
+      "name": "product",
+      "chnname": "商品模块",
+      "entities": [
+        {
+          "title": "products",
+          "fields": [
+            {
+              "name": "id",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "主键",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true
+            },
+            {
+              "name": "name",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "商品名称"
+            },
+            {
+              "name": "title",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "商品标题"
+            },
+            {
+              "name": "share_title",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "分享标题"
+            },
+            {
+              "name": "share_descip",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "分享描述"
+            },
+            {
+              "name": "shop_id",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "店铺ID",
+              "defaultValue": "0"
+            },
+            {
+              "name": "mch_id",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "供应商ID",
+              "defaultValue": "0"
+            },
+            {
+              "name": "category_id",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "商品分类"
+            },
+            {
+              "name": "unit",
+              "type": "MINString",
+              "remark": "",
+              "chnname": "单位"
+            },
+            {
+              "name": "sale_amount",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "零售价",
+              "defaultValue": "0"
+            },
+            {
+              "name": "vip_amount",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "会员价",
+              "defaultValue": "0"
+            },
+            {
+              "name": "marker_amount",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "市场价",
+              "defaultValue": "0"
+            },
+            {
+              "name": "max_amount",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "最高价",
+              "defaultValue": "0"
+            },
+            {
+              "name": "min_amount",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "最低价",
+              "defaultValue": "0"
+            },
+            {
+              "name": "content",
+              "type": "LongText",
+              "remark": "",
+              "chnname": "商品详情"
+            },
+            {
+              "name": "logo",
+              "type": "MiddleString",
+              "remark": "",
+              "chnname": "商品LOGO"
+            },
+            {
+              "name": "orderby",
+              "type": "MEDIUMINT",
+              "remark": "",
+              "chnname": "排序",
+              "defaultValue": "99"
+            },
+            {
+              "name": "status",
+              "type": "STATUS",
+              "remark": "",
+              "chnname": "状态",
+              "defaultValue": "0"
+            },
+            {
+              "name": "stock",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "库存",
+              "defaultValue": "0"
+            },
+            {
+              "name": "sale",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "销量",
+              "defaultValue": "0"
+            },
+            {
+              "name": "is_delete",
+              "type": "STATUS",
+              "remark": "",
+              "chnname": "是否删除",
+              "defaultValue": "0"
+            },
+            {
+              "name": "check_status",
+              "type": "STATUS",
+              "remark": "",
+              "chnname": "审核状态",
+              "defaultValue": "0"
+            },
+            {
+              "name": "admin_id",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "操作员",
+              "defaultValue": "0"
+            },
+            {
+              "name": "created_at",
+              "type": "DateTime",
+              "remark": "",
+              "chnname": "创建时间"
+            },
+            {
+              "name": "updated_at",
+              "type": "DateTime",
+              "remark": "",
+              "chnname": "更新时间"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "商品表",
+          "remark": "商品基础信息表"
+        },
+        {
+          "title": "product_attrs",
+          "fields": [
+            {
+              "name": "id",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "主键",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true
+            },
+            {
+              "name": "name",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "规格名"
+            },
+            {
+              "name": "product_id",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "商品ID",
+              "defaultValue": "0"
+            },
+            {
+              "name": "values",
+              "type": "JSON",
+              "remark": "",
+              "chnname": "规格配置项"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "商品规格配置表",
+          "remark": "商品规格配置"
+        }
+      ],
+      "graphCanvas": {
+        "nodes": [],
+        "edges": []
+      },
+      "associations": []
+    }
+  ],
+  "version": "v1.0.0",
+  "message": "版本初始化",
+  "date": "2021/2/4 23:2:10"
+}

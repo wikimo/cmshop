@@ -196,3 +196,66 @@
 ### 组合商品
 
 * TODO...
+
+### 建表SQL
+
+```sql
+CREATE TABLE products(
+    id INT NOT NULL AUTO_INCREMENT  COMMENT '主键' ,
+    name VARCHAR(30)    COMMENT '商品名称' ,
+    title VARCHAR(50)    COMMENT '商品标题' ,
+    share_title VARCHAR(50)    COMMENT '分享标题' ,
+    share_descip VARCHAR(50)    COMMENT '分享描述' ,
+    shop_id INT NOT NULL  DEFAULT 0 COMMENT '店铺ID' ,
+    mch_id INT NOT NULL  DEFAULT 0 COMMENT '供应商ID' ,
+    category_id INT    COMMENT '商品分类' ,
+    unit VARCHAR(15)    COMMENT '单位' ,
+    sale_amount INT NOT NULL  DEFAULT 0 COMMENT '零售价' ,
+    vip_amount INT NOT NULL  DEFAULT 0 COMMENT '会员价' ,
+    marker_amount INT NOT NULL  DEFAULT 0 COMMENT '市场价' ,
+    max_amount INT NOT NULL  DEFAULT 0 COMMENT '最高价' ,
+    min_amount INT NOT NULL  DEFAULT 0 COMMENT '最低价' ,
+    content TEXT    COMMENT '商品详情' ,
+    logo VARCHAR(150)    COMMENT '商品LOGO' ,
+    orderby MEDIUMINT(5) NOT NULL  DEFAULT 99 COMMENT '排序' ,
+    status TINYINT(2) NOT NULL  DEFAULT 0 COMMENT '状态' ,
+    stock INT NOT NULL  DEFAULT 0 COMMENT '库存' ,
+    sale INT NOT NULL  DEFAULT 0 COMMENT '销量' ,
+    is_delete TINYINT(2) NOT NULL  DEFAULT 0 COMMENT '是否删除' ,
+    check_status TINYINT(2) NOT NULL  DEFAULT 0 COMMENT '审核状态' ,
+    shipping_template_id INT NOT NULL  DEFAULT 0 COMMENT '运费模板ID' ,
+    admin_id INT NOT NULL  DEFAULT 0 COMMENT '操作员' ,
+    created_at DATETIME    COMMENT '创建时间' ,
+    updated_at DATETIME    COMMENT '更新时间' ,
+    PRIMARY KEY (id)
+) COMMENT = '商品表';
+
+CREATE TABLE product_attrs(
+    id INT NOT NULL AUTO_INCREMENT  COMMENT '主键' ,
+    name VARCHAR(30)    COMMENT '规格名' ,
+    product_id INT NOT NULL  DEFAULT 0 COMMENT '商品ID' ,
+    values JSON    COMMENT '规格配置项' ,
+    created_at VARCHAR(30)    COMMENT '创建时间' ,
+    updated_at VARCHAR(30)    COMMENT '更新时间' ,
+    PRIMARY KEY (id)
+) COMMENT = '商品规格配置表';
+
+CREATE TABLE product_attr_vals(
+    id INT NOT NULL AUTO_INCREMENT  COMMENT '主键' ,
+    product_id INT NOT NULL  DEFAULT 0 COMMENT '商品ID' ,
+    attr_vals JSON    COMMENT '规格配置项组合值' ,
+    sale_amount INT NOT NULL  DEFAULT 0 COMMENT '零售价' ,
+    vip_amount INT NOT NULL  DEFAULT 0 COMMENT '会员价' ,
+    market_amount INT NOT NULL  DEFAULT 0 COMMENT '市场价' ,
+    stock INT NOT NULL  DEFAULT 0 COMMENT '库存' ,
+    sale INT NOT NULL  DEFAULT 0 COMMENT '销量' ,
+    thumb VARCHAR(150)    COMMENT '预览图' ,
+    orderby MEDIUMINT(5) NOT NULL  DEFAULT 99 COMMENT '排序' ,
+    created_at DATETIME    COMMENT '创建时间' ,
+    updated_at DATETIME    COMMENT '更新时间' ,
+    PRIMARY KEY (id)
+) COMMENT = '商品规格值表';
+```
+
+
+
